@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Smartphone Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📱</text></svg>">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="brand-logo">
+                <i class="fas fa-mobile-alt"></i>
+                <span>NEXUS OS</span>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+            <p class="loading-text">Inicializando sistema...</p>
+        </div>
+    </div>
+
+    <!-- Phone Frame -->
+    <div class="phone-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="time" id="currentTime">09:41</div>
+            <div class="status-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-three-quarters"></i>
+            </div>
+        </div>
+
+        <!-- Dynamic Wallpaper -->
+        <div class="wallpaper" id="wallpaper">
+            <div class="wallpaper-overlay"></div>
+            <div class="date-display">
+                <div class="day" id="currentDay">Segunda-feira</div>
+                <div class="date" id="currentDate">15 de abril</div>
+            </div>
+        </div>
+
+        <!-- Home Screen -->
+        <div class="home-screen" id="homeScreen">
+            <!-- Dock -->
+            <div class="dock">
+                <div class="app-icon dock-icon" data-app="phone">
+                    <i class="fas fa-phone"></i>
+                    <span>Telefone</span>
+                </div>
+                <div class="app-icon dock-icon" data-app="messages">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>Mensagens</span>
+                </div>
+                <div class="app-icon dock-icon" data-app="browser">
+                    <i class="fas fa-globe"></i>
+                    <span>Navegador</span>
+                </div>
+                <div class="app-icon dock-icon" data-app="music">
+                    <i class="fas fa-music"></i>
+                    <span>Música</span>
+                </div>
+            </div>
+
+            <!-- App Grid -->
+            <div class="app-grid">
+                <div class="app-icon" data-app="camera">
+                    <div class="app-badge">3</div>
+                    <i class="fas fa-camera"></i>
+                    <span>Câmera</span>
+                </div>
+                <div class="app-icon" data-app="gallery">
+                    <i class="fas fa-images"></i>
+                    <span>Fotos</span>
+                </div>
+                <div class="app-icon" data-app="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Configurações</span>
+                </div>
+                <div class="app-icon" data-app="calendar">
+                    <div class="app-badge">1</div>
+                    <i class="fas fa-calendar"></i>
+                    <span>Calendário</span>
+                </div>
+                <div class="app-icon" data-app="weather">
+                    <i class="fas fa-cloud-sun"></i>
+                    <span>Tempo</span>
+                </div>
+                <div class="app-icon" data-app="maps">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>Mapas</span>
+                </div>
+                <div class="app-icon" data-app="email">
+                    <div class="app-badge">12</div>
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </div>
+                <div class="app-icon" data-app="notes">
+                    <i class="fas fa-sticky-note"></i>
+                    <span>Notas</span>
+                </div>
+                <div class="app-icon" data-app="calculator">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculadora</span>
+                </div>
+                <div class="app-icon" data-app="clock">
+                    <i class="fas fa-clock"></i>
+                    <span>Relógio</span>
+                </div>
+                <div class="app-icon" data-app="contacts">
+                    <i class="fas fa-address-book"></i>
+                    <span>Contatos</span>
+                </div>
+                <div class="app-icon" data-app="store">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Loja</span>
+                </div>
+            </div>
+
+            <!-- Control Center Toggle -->
+            <div class="control-center-toggle">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+        </div>
+
+        <!-- Control Center -->
+        <div class="control-center" id="controlCenter">
+            <div class="cc-header">
+                <h3>Centro de Controle</h3>
+                <button class="cc-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cc-grid">
+                <div class="cc-tile wifi active" data-toggle="wifi">
+                    <i class="fas fa-wifi"></i>
+                    <span>Wi-Fi</span>
+                </div>
+                <div class="cc-tile bluetooth" data-toggle="bluetooth">
+                    <i class="fas fa-bluetooth"></i>
+                    <span>Bluetooth</span>
+                </div>
+                <div class="cc-tile airplane" data-toggle="airplane">
+                    <i class="fas fa-plane"></i>
+                    <span>Modo Avião</span>
+                </div>
+                <div class="cc-tile cellular active" data-toggle="cellular">
+                    <i class="fas fa-signal"></i>
+                    <span>Celular</span>
+                </div>
+                <div class="cc-tile flashlight" data-toggle="flashlight">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Lanterna</span>
+                </div>
+                <div class="cc-tile rotation" data-toggle="rotation">
+                    <i class="fas fa-lock"></i>
+                    <span>Rotacionar</span>
+                </div>
+                <div class="cc-tile airdrop" data-toggle="airdrop">
+                    <i class="fas fa-share-alt"></i>
+                    <span>Airdrop</span>
+                </div>
+                <div class="cc-tile hotspot" data-toggle="hotspot">
+                    <i class="fas fa-wifi"></i>
+                    <span>Hotspot</span>
+                </div>
+            </div>
+            <div class="cc-sliders">
+                <div class="slider-container">
+                    <i class="fas fa-sun"></i>
+                    <input type="range" min="0" max="100" value="70" class="slider" id="brightnessSlider">
+                </div>
+                <div class="slider-container">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" min="0" max="100" value="50" class="slider" id="volumeSlider">
+                </div>
+            </div>
+        </div>
+
+        <!-- App Windows -->
+        <div class="app-window" id="appWindow">
+            <!-- App Header -->
+            <div class="app-header">
+                <button class="back-btn"><i class="fas fa-chevron-left"></i></button>
+                <h3 class="app-title" id="appTitle">App</h3>
+                <button class="menu-btn"><i class="fas fa-ellipsis-v"></i></button>
+            </div>
+
+            <!-- App Content -->
+            <div class="app-content" id="appContent">
+                <!-- Content will be loaded dynamically -->
+                <div class="app-placeholder">
+                    <i class="fas fa-mobile-alt"></i>
+                    <p>Selecione um aplicativo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lock Screen -->
+        <div class="lock-screen" id="lockScreen">
+            <div class="lock-time" id="lockTime">09:41</div>
+            <div class="lock-date" id="lockDate">Segunda-feira, 15 de abril</div>
+            <div class="lock-notifications">
+                <div class="notification">
+                    <i class="fas fa-envelope"></i>
+                    <div class="notification-content">
+                        <strong>Maria Silva</strong>
+                        <p>Olá, como você está?</p>
+                        <span>2 min atrás</span>
+                    </div>
+                </div>
+                <div class="notification">
+                    <i class="fas fa-calendar"></i>
+                    <div class="notification-content">
+                        <strong>Reunião</strong>
+                        <p>Daily às 10:00</p>
+                        <span>15 min atrás</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lock-indicator">
+                <i class="fas fa-chevron-up"></i>
+                <p>Deslize para desbloquear</p>
+            </div>
+            <div class="lock-slider" id="lockSlider">
+                <div class="slider-track">
+                    <i class="fas fa-lock"></i>
+                    <span>Deslize para desbloquear</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <button class="nav-btn" id="navBack"><i class="fas fa-chevron-left"></i></button>
+            <button class="nav-btn" id="navHome"><i class="fas fa-home"></i></button>
+            <button class="nav-btn" id="navRecent"><i class="fas fa-square"></i></button>
+        </div>
+
+        <!-- Notifications Panel -->
+        <div class="notifications-panel" id="notificationsPanel">
+            <div class="notifications-header">
+                <h3>Notificações</h3>
+                <button class="clear-btn">Limpar todas</button>
+            </div>
+            <div class="notifications-list" id="notificationsList">
+                <!-- Notifications will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
+    <audio id="unlockSound" src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-phone-notification-253.mp3"></audio>
+    <audio id="cameraSound" src="https://assets.mixkit.co/sfx/preview/mixkit-camera-shutter-click-1133.mp3"></audio>
+    <audio id="messageSound" src="https://assets.mixkit.co/sfx/preview/mixkit-message-pop-alert-2354.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
